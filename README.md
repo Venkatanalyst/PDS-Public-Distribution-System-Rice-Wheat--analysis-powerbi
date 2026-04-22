@@ -241,11 +241,18 @@ Ultimately, it ensures that **essential food resources reach the intended benefi
 
 ## 🚀 Author
 
-**Venkatesh V**
-Data Analyst | Excel | Power BI | SQL Enthusiast
+**V.Venkatesh**
+Data Analyst | Power BI Developer
 
----
+🌐 GitHub: [Venkatanalyst](https://github.com/Venkatanalyst/)
 
-## ⭐ If you found this project useful
+💼 LinkedIn: [Venkatesh Venugopal](https://www.linkedin.com/in/venkatesh-v-dataanalyst/)
 
-Give it a ⭐ on GitHub and feel free to connect!
+📧 Email: Calepsundar08@gmail.com
+
+If you found this project useful or have feedback, feel free to reach out!
+
+📚 Tags
+#PowerBI #DataAnalysis #E-Commerce #PerformanceAnalytics
+#DAX #DataVisualization #ExcelPowerQuery
+
