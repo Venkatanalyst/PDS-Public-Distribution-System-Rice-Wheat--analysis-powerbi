@@ -190,6 +190,10 @@ This project converts raw transactional data into **actionable insights** to ide
 * **KPI Cards**
   Key metrics overview
 
+  ## 📷 Dashboard Preview
+
+
+
 ---
 
 ## 💡 Key Insights
@@ -228,11 +232,6 @@ Ultimately, it ensures that **essential food resources reach the intended benefi
 
 ---
 
-## 📷 Dashboard Preview
-
-*(Add your Power BI screenshots here)*
-
----
 
 ## 🚀 Author
 
