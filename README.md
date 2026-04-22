@@ -12,22 +12,23 @@ An interactive dashboard is developed to provide stakeholders with a **Single So
 
 ## 🎯 Objectives
 
-1. **End-to-End visibility**   
+1. **End-to-End visibility**
+      
    Track the lifecycle of food grains from initial allocation to final distribution.
 
-2. **Gap analysis**
+3. **Gap analysis**
     
    Quantify and localize wastage (the delta between allocation and distribution).
 
-3. **Regional benchmarking**
+4. **Regional benchmarking**
    
    Compare state and district performance using a standardized efficiency index.
 
-4. **Historical trends (2017–2021)**
+5. **Historical trends (2017–2021)**
    
    Analyse historical patterns (2017–2021) to identify seasonal supply chain pressures.
 
-5. **Data-driven accountability system**
+6. **Data-driven accountability system**
     
    Rank states based on a custom efficiency Index to drive systemic improvements.
 
@@ -103,23 +104,23 @@ This project converts raw transactional data into **actionable insights** to ide
 
 ## 🧹 Data Preprocessing Steps
 
-* **Data Cleaning**
+* **Data Cleaning**:
   
   Removed null values and corrected inconsistent naming conventions for states and districts.
 
-* **Type Conversion**
+* **Type Conversion**:
   
   Standardized numeric columns to decimal formats for precise calculation and ensured date columns followed a uniform DD-MM-YYYY format.
 
-* **Column Splitting/Merging**
+* **Column Splitting/Merging**:
   
   Parsed "Location & ID" strings into distinct columns for cleaner filtering.
 
-* **Formatting**
+* **Formatting**:
   
   Applied consistent naming across all headers for better readability within the Power BI field pane.
 
-* **Date Engineering**
+* **Date Engineering**:
   
   Generated a comprehensive Calendar Table to support DAX time-intelligence functions.
 
@@ -148,19 +149,19 @@ This project converts raw transactional data into **actionable insights** to ide
 
 ### Calculated Columns
 
-* **Category**
+* **Category**:
   
   Segments data based on grain types for rapid slicer interaction.
   
-* **Performance Tiers**
+* **Performance Tiers**:
   
   A logical column classifying districts into High, Medium, or Low performance based on distribution percentages.
   
-* **Shortfall Indicator**
+* **Shortfall Indicator**:
   
   A flag to highlight districts where distribution fell below 90% of the allocation.
   
-* **Grain Category**
+* **Grain Category**:
   
   Simplifies the selection between Wheat and Rice for end-users
 
