@@ -192,7 +192,13 @@ This project converts raw transactional data into **actionable insights** to ide
 
   ## 📷 Dashboard Preview
 
+<img width="606" height="335" alt="Overview" src="https://github.com/user-attachments/assets/cc8ea13c-b830-4e7e-9b4c-b13bc5e99754" />
 
+
+<img width="603" height="333" alt="Performance" src="https://github.com/user-attachments/assets/e0d2e96b-a88e-4487-afe1-44d20bad0dcb" />
+
+
+<img width="605" height="333" alt="Distribution" src="https://github.com/user-attachments/assets/ca25ddc8-1d67-4b53-87d5-ff12de6fa49a" />
 
 ---
 
