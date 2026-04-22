@@ -12,8 +12,7 @@ An interactive dashboard is developed to provide stakeholders with a **Single So
 
 ## 🎯 Objectives
 
-1. **End-to-End visibility**
-    
+1. **End-to-End visibility**   
    Track the lifecycle of food grains from initial allocation to final distribution.
 
 2. **Gap analysis**
