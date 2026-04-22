@@ -12,22 +12,28 @@ An interactive dashboard is developed to provide stakeholders with a **Single So
 
 ## 🎯 Objectives
 
-1. **End-to-End visibility** 
+1. **End-to-End visibility**
+    
    Track the lifecycle of food grains from initial allocation to final distribution.
 
-2. **Gap analysis** 
+2. **Gap analysis**
+    
    Quantify and localize wastage (the delta between allocation and distribution).
 
-3. **Regional benchmarking** 
+3. **Regional benchmarking**
+   
    Compare state and district performance using a standardized efficiency index.
 
 4. **Historical trends (2017–2021)**
+   
    Analyse historical patterns (2017–2021) to identify seasonal supply chain pressures.
 
-5. **Data-driven accountability system** 
+5. **Data-driven accountability system**
+    
    Rank states based on a custom efficiency Index to drive systemic improvements.
 
-6. **Distribution efficiency** 
+7. **Distribution efficiency**
+   
    Compare allocated vs actual distributed quantities to identify underperforming States
 
 ---
@@ -99,18 +105,23 @@ This project converts raw transactional data into **actionable insights** to ide
 ## 🧹 Data Preprocessing Steps
 
 * **Data Cleaning**
+  
   Removed null values and corrected inconsistent naming conventions for states and districts.
 
 * **Type Conversion**
+  
   Standardized numeric columns to decimal formats for precise calculation and ensured date columns followed a uniform DD-MM-YYYY format.
 
 * **Column Splitting/Merging**
+  
   Parsed "Location & ID" strings into distinct columns for cleaner filtering.
 
 * **Formatting**
+  
   Applied consistent naming across all headers for better readability within the Power BI field pane.
 
 * **Date Engineering**
+  
   Generated a comprehensive Calendar Table to support DAX time-intelligence functions.
 
 ---
@@ -139,55 +150,56 @@ This project converts raw transactional data into **actionable insights** to ide
 ### Calculated Columns
 
 * **Category**
+  
   Segments data based on grain types for rapid slicer interaction.
+  
 * **Performance Tiers**
+  
   A logical column classifying districts into High, Medium, or Low performance based on distribution percentages.
+  
 * **Shortfall Indicator**
+  
   A flag to highlight districts where distribution fell below 90% of the allocation.
+  
 * **Grain Category**
+  
   Simplifies the selection between Wheat and Rice for end-users
 
 ### Measures
 
-* **Total Allocation**
-  Establishes the baseline target. the total quantity of food grains the government intended to provide for a specific period or region.
 
-* **Total Distribution**
-   Measures the actual execution. This is the most critical figure for determining the success of the supply chain.
-
-* **Total Wastage**
-  Quantifies "Leakage." In a PDS context, this identifies grain that was allocated but never reached the end consumer, signalling potential logistical issues, storage loss, or data reporting gaps.
-
-* **Efficiency (%)**
-  Normalizes performance. It allows us to compare a small district with a large state fairly. An $85\%$ efficiency in a small district is objectively comparable to $85\%$ in a large state, even if the volumes differ
-
-* **State Rank**
-  Gamifies performance. It automatically assigns a numerical rank to each state. If a user filters by "Wheat," the rank recalculates to show who the top wheat distributors are.
-
-* **Average Efficiency**
-  Provides a "Health Check" for a region. It calculates the mean performance across all sub-entities, helping to identify if a state's high volume is driven by just one good district or if performance is consistent across the board**.**
-
-* **YTD Distribution**
-  Tracks progress against annual goals. As the year progresses, this measure climbs, allowing officials to see if they are on track to meet their yearly distribution quotas.
-
-* **Running Total (Monthly)**
-  Visualizes the  distribution over the months, making it easy to spot which months have the highest activity.
+| Measure                     | DAX Formula                                                                                           | KPI Type        | Description                                  | Business Use Case                        |
+| --------------------------- | ----------------------------------------------------------------------------------------------------- | --------------- | -------------------------------------------- | ---------------------------------------- |
+| **Total Allocation**        | `SUM('PDS'[Allocated Quantity])`                                                                      | Volume KPI      | Total quantity allocated by government       | Baseline target for supply planning      |
+| **Total Distribution**      | `SUM('PDS'[Distributed Quantity])`                                                                    | Volume KPI      | Total quantity actually distributed          | Measures execution efficiency            |
+| **Total Wastage**           | `[Total Allocation] - [Total Distribution]`                                                           | Risk KPI        | Difference between allocated and distributed | Detects leakage and operational gaps     |
+| **Efficiency (%)**          | `DIVIDE([Total Distribution], [Total Allocation])`                                                    | Performance KPI | Percentage of successful distribution        | Compares performance across regions      |
+| **State Rank**              | `RANKX(ALL('PDS'[State]), [Efficiency (%)], , DESC)`                                                  | Ranking KPI     | Rank states based on efficiency              | Identifies top and bottom performers     |
+| **Average Efficiency**      | `AVERAGEX(VALUES('PDS'[District]), [Efficiency (%)])`                                                 | Analytical KPI  | Average efficiency across districts          | Evaluates consistency within regions     |
+| **YTD Distribution**        | `TOTALYTD([Total Distribution], 'Calendar'[Date])`                                                    | Time KPI        | Cumulative distribution within a year        | Tracks progress toward annual targets    |
+| **Running Total (Monthly)** | `CALCULATE([Total Distribution], FILTER(ALL('Calendar'), 'Calendar'[Date] <= MAX('Calendar'[Date])))` | Trend KPI       | Rolling cumulative monthly distribution      | Identifies seasonality and demand spikes |
 
 ---
 
 ## 📈 Dashboard & Visualizations
 
 * **Treemap**
+  
   Monthly performance distribution
 * **Funnel Chart**
+  
   State ranking
 * **Area Chart**
+  
   Trend analysis
 * **Matrix Table**
+  
   District-level details
 * **Donut & Bar Charts**
+  
   Wastage analysis
 * **KPI Cards**
+  
   Key metrics overview
 
   ## 📷 Dashboard Preview
